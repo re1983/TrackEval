@@ -148,6 +148,8 @@ class MotChallenge2DBox(_BaseDataset):
         else:
             if self.config["SEQMAP_FILE"]:
                 seqmap_file = self.config["SEQMAP_FILE"]
+                # if isinstance(seqmap_file, list):
+                #      seqmap_file = seqmap_file[0]
                 print('@seqmap file specified: ' + seqmap_file)
             else:
                 if self.config["SEQMAP_FOLDER"] is None:
