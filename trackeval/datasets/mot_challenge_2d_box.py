@@ -148,11 +148,14 @@ class MotChallenge2DBox(_BaseDataset):
         else:
             if self.config["SEQMAP_FILE"]:
                 seqmap_file = self.config["SEQMAP_FILE"]
+                print('@seqmap file specified: ' + seqmap_file)
             else:
                 if self.config["SEQMAP_FOLDER"] is None:
                     seqmap_file = os.path.join(self.config['GT_FOLDER'], 'seqmaps', self.gt_set + '.txt')
+                    print('@seqmap file not specified, using default: ["SEQMAP_FOLDER"] ' + seqmap_file)
                 else:
                     seqmap_file = os.path.join(self.config["SEQMAP_FOLDER"], self.gt_set + '.txt')
+                    print('@seqmap file not specified, using default: ' + seqmap_file)
             if not os.path.isfile(seqmap_file):
                 print('no seqmap found: ' + seqmap_file)
                 raise TrackEvalException('no seqmap found: ' + os.path.basename(seqmap_file))
