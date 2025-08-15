@@ -1,3 +1,6 @@
+#
+
+python scripts/run_mot_challenge.py --BENCHMARK MOT17 --SPLIT_TO_EVAL train --TRACKERS_TO_EVAL M3OT_Tracker --METRICS HOTA --USE_PARALLEL False --NUM_PARALLEL_CORES 23
 
 # TrackEval
 *Code for evaluating object tracking.*
